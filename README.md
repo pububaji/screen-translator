@@ -4,6 +4,13 @@
 
 ![界面预览](docs/preview.png)
 
+<details>
+<summary>深色模式截图</summary>
+
+![深色模式](docs/preview-dark.png)
+
+</details>
+
 ## 免安装版（推荐普通用户）
 
 不想安装 Python？直接下载 [最新 Release](https://github.com/pubobaji-hyx/screen-translator/releases/latest)
@@ -18,6 +25,7 @@
 - **全屏翻译**：一键识别整个屏幕
 - **剪贴板翻译**：翻译已复制的文字
 - **一键复制**：译文窗口直接复制到剪贴板
+- **原生界面**：Windows 11 Fluent 风格，自动跟随系统浅色 / 深色模式
 - **本地 OCR**：中英混排识别在本机离线完成，截图不会上传
 - **多种翻译引擎**：Google 免费接口（零配置）或任意 OpenAI 兼容大模型
 - **托盘常驻**：可设置目标语言、快捷键、开机自启

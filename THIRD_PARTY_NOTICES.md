@@ -13,6 +13,7 @@
 | NumPy | BSD-3-Clause | https://github.com/numpy/numpy |
 | Pillow | HPND / MIT-CMU | https://github.com/python-pillow/Pillow |
 | pystray | LGPL-3.0 | https://github.com/str4d/pystray |
+| sv-ttk | MIT | https://github.com/rdbende/Sun-Valley-ttk-theme |
 | keyboard | MIT | https://github.com/boppreh/keyboard |
 | mss | MIT | https://github.com/BoboTiG/python-mss |
 | curl_cffi | MIT | https://github.com/lexiforest/curl_cffi |

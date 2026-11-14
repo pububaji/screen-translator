@@ -41,7 +41,9 @@ from capture import RegionSelector, grab_virtual_screen  # noqa: E402
 from config import APP_DIR, load_config, save_config  # noqa: E402
 from ocr_engine import OcrEngine  # noqa: E402
 from translate import TranslateError, get_translator  # noqa: E402
-from ui import BusyToast, ResultWindow, SettingsWindow, show_error_toast  # noqa: E402
+from ui import (  # noqa: E402
+    BusyToast, ResultWindow, SettingsWindow, init_theme, show_error_toast,
+)
 
 log = logging.getLogger("screen_translator")
 
@@ -147,6 +149,8 @@ class ScreenTranslatorApp:
             self.root.tk.call("tk", "scaling", max(1.0, dpi / 72.0))
         except Exception:
             pass
+        self.theme = init_theme(self.root)
+        log.info("界面主题：%s", self.theme)
 
         self.queue: queue.Queue = queue.Queue()
         self.ocr = OcrEngine()

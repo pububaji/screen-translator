@@ -14,6 +14,24 @@ log = logging.getLogger(__name__)
 
 HINT_TEXT = "拖动鼠标框选要翻译的文字    Esc / 右键取消"
 
+ACCENT = "#4cc2ff"
+PILL_BG = "#1f1f1f"
+PILL_FG = "#f3f3f3"
+
+
+def _round_rect_points(left: float, top: float, right: float,
+                       bottom: float, radius: float) -> tuple[float, ...]:
+    radius = max(0.0, min(radius, (right - left) / 2, (bottom - top) / 2))
+    r = radius
+    return (
+        left + r, top, right - r, top,
+        right, top, right, top + r,
+        right, bottom - r, right, bottom,
+        right - r, bottom, left + r, bottom,
+        left, bottom, left, bottom - r,
+        left, top + r, left, top,
+    )
+
 
 def virtual_screen_rect() -> tuple[int, int, int, int]:
     """整个虚拟桌面（含多显示器）的屏幕坐标。"""
@@ -80,23 +98,25 @@ class RegionSelector:
 
         self.hint_text = self.canvas.create_text(
             width // 2, 24, anchor="n", text=HINT_TEXT,
-            fill="#f3f4f6", font=("Microsoft YaHei UI", 10),
+            fill=PILL_FG, font=("Microsoft YaHei UI", 10),
         )
-        self.hint_bg = self.canvas.create_rectangle(
-            0, 0, 0, 0, fill="#111827", outline="", tags="hint_bg",
+        self.hint_bg = self.canvas.create_polygon(
+            0, 0, 0, 0, smooth=True, splinesteps=12,
+            fill=PILL_BG, outline="", tags="hint_bg",
         )
         self.canvas.tag_lower(self.hint_bg, self.hint_text)
         self._fit_hint_bg()
 
         self.sel_id = self.canvas.create_rectangle(
-            0, 0, 0, 0, outline="#ff3b30", width=2, state="hidden",
+            0, 0, 0, 0, outline=ACCENT, width=2, state="hidden",
         )
         self.size_text = self.canvas.create_text(
-            0, 0, anchor="nw", text="", fill="white",
+            0, 0, anchor="nw", text="", fill=PILL_FG,
             font=("Microsoft YaHei UI", 9), state="hidden",
         )
-        self.size_bg = self.canvas.create_rectangle(
-            0, 0, 0, 0, fill="#111827", outline="", state="hidden",
+        self.size_bg = self.canvas.create_polygon(
+            0, 0, 0, 0, smooth=True, splinesteps=12,
+            fill=PILL_BG, outline="", state="hidden",
         )
         self.canvas.tag_lower(self.size_bg, self.size_text)
 
@@ -146,7 +166,10 @@ class RegionSelector:
         bbox = self.canvas.bbox(self.hint_text)
         if bbox:
             left, top, right, bottom = bbox
-            self.canvas.coords(self.hint_bg, left - 10, top - 5, right + 10, bottom + 5)
+            self.canvas.coords(
+                self.hint_bg,
+                *_round_rect_points(left - 12, top - 6, right + 12, bottom + 6, 9),
+            )
 
     def _update_selection(self, left: int, top: int, right: int, bottom: int) -> None:
         self.canvas.coords(self.sel_id, left, top, right, bottom)
@@ -159,7 +182,9 @@ class RegionSelector:
         bbox = self.canvas.bbox(self.size_text)
         if bbox:
             l, t, r, b = bbox
-            self.canvas.coords(self.size_bg, l - 4, t - 2, r + 4, b + 2)
+            self.canvas.coords(
+                self.size_bg, *_round_rect_points(l - 5, t - 2, r + 5, b + 2, 7)
+            )
             self.canvas.itemconfigure(self.size_bg, state="normal")
         self.canvas.tag_raise(self.sel_id)
         self.canvas.tag_raise(self.size_bg)

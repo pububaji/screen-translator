@@ -52,6 +52,7 @@ def main() -> int:
         "--add-data", "assets;assets",
         "--collect-all", "rapidocr_onnxruntime",
         "--collect-all", "curl_cffi",
+        "--collect-all", "sv_ttk",
         "main.py",
     ])
 

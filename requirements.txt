@@ -6,3 +6,4 @@ requests==2.34.2
 curl_cffi==0.17.0
 pystray==0.19.5
 keyboard==0.13.5
+sv-ttk==2.6.1
