@@ -82,7 +82,7 @@ python -m venv .venv
 .venv\Scripts\python.exe packaging\build_exe.py
 ```
 
-产物位于 `release\ScreenTranslator-v1.0.0-win64.zip`。
+产物位于 `release\ScreenTranslator-v1.1.0-win64.zip`。
 
 ## 使用
 

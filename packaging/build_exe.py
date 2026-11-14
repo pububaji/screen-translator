@@ -15,7 +15,7 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VERSION = sys.argv[1] if len(sys.argv) > 1 else "1.0.0"
+VERSION = sys.argv[1] if len(sys.argv) > 1 else "1.1.0"
 PYTHON = os.path.join(ROOT, ".venv", "Scripts", "python.exe")
 DIST = os.path.join(ROOT, "dist", "ScreenTranslator")
 RELEASE = os.path.join(ROOT, "release")
