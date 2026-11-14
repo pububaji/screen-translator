@@ -13,7 +13,7 @@
 
 ## 免安装版（推荐普通用户）
 
-不想安装 Python？直接下载 [最新 Release](https://github.com/pubobaji-hyx/screen-translator/releases/latest)
+不想安装 Python？直接下载 [最新 Release](https://github.com/pububaji/screen-translator/releases/latest)
 里的 `ScreenTranslator-v*-win64.zip`，解压后双击 `ScreenTranslator.exe` 即可。
 
 > 程序没有数字签名，首次运行 Windows 可能弹出「已保护你的电脑」，
@@ -52,7 +52,7 @@
 ## 安装
 
 ```bat
-git clone https://github.com/pubobaji-hyx/screen-translator.git
+git clone https://github.com/pububaji/screen-translator.git
 cd screen-translator
 
 python -m venv .venv

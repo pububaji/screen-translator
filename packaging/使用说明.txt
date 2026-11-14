@@ -30,4 +30,4 @@ Windows 可能弹出「已保护你的电脑」，因为程序没有数字签名
 程序目录下的 config.json 保存设置，app.log 记录错误信息。
 
 【完整说明】
-https://github.com/pubobaji-hyx/screen-translator
+https://github.com/pububaji/screen-translator

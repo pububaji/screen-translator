@@ -36,7 +36,7 @@
 
 - **pystray（LGPL-3.0）**：免安装版以动态打包形式包含该库。根据 LGPL 的要求，
   本项目的全部源码与构建脚本均公开在
-  https://github.com/pubobaji-hyx/screen-translator ，
+  https://github.com/pububaji/screen-translator ，
   你可以自行替换 pystray 后重新构建。
 - **OCR 模型**：RapidOCR 随包提供的 PP-OCR 模型版权归 PaddleOCR / 百度所有，
   按其 Apache-2.0 许可证分发。
