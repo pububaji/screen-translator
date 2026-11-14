@@ -28,7 +28,10 @@
 ## 环境要求
 
 - Windows 10 / 11（依赖系统托盘、全局快捷键和 DPI 接口）
-- Python 3.10+
+- **Python 3.12（64 位）**
+  - `rapidocr-onnxruntime` 目前不支持 Python 3.13 及以上
+  - Python 3.10 及以下缺少 `onnxruntime` 的预编译包
+  - 安装时请确认 `python --version` 输出为 3.12.x
 
 ## 安装
 
@@ -39,6 +42,8 @@ cd screen-translator
 python -m venv .venv
 .venv\Scripts\python.exe -m pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
+
+以上流程已在 Windows 11 + Python 3.12 下用全新虚拟环境实测通过。
 
 首次运行会自动加载 OCR 模型（随依赖安装，约几十 MB），耗时约 1 秒。
 

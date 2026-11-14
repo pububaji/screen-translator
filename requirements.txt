@@ -1,7 +1,8 @@
-mss
-pillow
-rapidocr-onnxruntime
-requests
-curl_cffi
-pystray
-keyboard
+mss==10.2.0
+pillow==13.0.0
+numpy==2.5.4
+rapidocr-onnxruntime==1.4.4
+requests==2.34.2
+curl_cffi==0.17.0
+pystray==0.19.5
+keyboard==0.13.5
