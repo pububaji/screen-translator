@@ -65,6 +65,17 @@ python -m venv .venv
 
 启动后没有主界面，只在任务栏右下角的托盘里出现一个蓝底「译」图标。
 
+## 自行打包免安装版
+
+想自己生成 Release 里的 exe（需要先完成上面的源码安装）：
+
+```bat
+.venv\Scripts\python.exe -m pip install pyinstaller
+.venv\Scripts\python.exe packaging\build_exe.py
+```
+
+产物位于 `release\ScreenTranslator-v1.0.0-win64.zip`。
+
 ## 使用
 
 1. 打开有外文的网页、软件或视频
@@ -115,6 +126,9 @@ python -m venv .venv
 | `启动屏幕翻译.vbs` | 无控制台窗口的启动器 |
 | `test_pipeline.py` | 自检脚本：识别并翻译一张测试图 |
 | `make_icon.py` | 生成托盘 / 快捷方式图标 |
+| `packaging/build_exe.py` | 打包 Windows 免安装版 |
+| `LICENSE` | MIT 许可证 |
+| `THIRD_PARTY_NOTICES.md` | 第三方组件许可证声明 |
 
 ## 已知限制
 
