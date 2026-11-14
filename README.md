@@ -4,6 +4,14 @@
 
 ![界面预览](docs/preview.png)
 
+## 免安装版（推荐普通用户）
+
+不想安装 Python？直接下载 [最新 Release](https://github.com/pubobaji-hyx/screen-translator/releases/latest)
+里的 `ScreenTranslator-v*-win64.zip`，解压后双击 `ScreenTranslator.exe` 即可。
+
+> 程序没有数字签名，首次运行 Windows 可能弹出「已保护你的电脑」，
+> 点「更多信息」→「仍要运行」即可。
+
 ## 功能
 
 - **框选翻译**：屏幕变暗后拖动鼠标框住文字，松开即出译文
@@ -70,6 +78,8 @@ python -m venv .venv
 
 - **Google 免费接口**：默认，无需配置。需要能访问 `translate.googleapis.com`。
   为绕过 Google 对普通 HTTP 客户端 TLS 指纹的拦截，程序使用 `curl_cffi` 模拟 Chrome 的指纹。
+  > 注意：这是**非官方接口**，直接调用可能违反 Google 服务条款，且随时可能失效或被限流。
+  > 长期使用建议配置「AI 大模型」引擎。
 - **AI 大模型**：支持 DeepSeek、OpenAI、Kimi、通义等 OpenAI 兼容接口。
   在设置里填写接口地址（如 `https://api.deepseek.com/v1`）、API Key 和模型名即可。
 
@@ -117,3 +127,13 @@ python -m venv .venv
 
 - [RapidOCR](https://github.com/RapidAI/RapidOCR) / PP-OCR 提供的离线 OCR 模型
 - [mss](https://github.com/BoboTiG/python-mss)、[pystray](https://github.com/str4d/pystray)、[keyboard](https://github.com/boppreh/keyboard)、[curl_cffi](https://github.com/lexiforest/curl_cffi)
+
+## 许可证
+
+本项目代码采用 [MIT License](LICENSE)。第三方组件的许可证与说明见
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
+## 免责声明
+
+本工具仅用于翻译你合法访问的屏幕内容。请遵守所在地区法律法规，以及目标网站 /
+服务的使用条款。使用本工具产生的任何后果由使用者自行承担。

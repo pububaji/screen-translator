@@ -8,7 +8,7 @@ import tkinter as tk
 from tkinter import ttk
 
 from capture import virtual_screen_rect
-from config import APP_DIR
+from config import ASSET_DIR
 from translate import language_label
 
 BG = "#f4f5f7"
@@ -67,7 +67,7 @@ class ResultWindow:
         win.title("屏幕翻译")
         win.configure(bg=BG)
         try:
-            win.iconbitmap(os.path.join(APP_DIR, "assets", "icon.ico"))
+            win.iconbitmap(os.path.join(ASSET_DIR, "icon.ico"))
         except tk.TclError:
             pass
         win.minsize(480, 380)
@@ -290,7 +290,7 @@ class SettingsWindow:
         self.win.title("屏幕翻译 - 设置")
         self.win.configure(bg=BG)
         try:
-            self.win.iconbitmap(os.path.join(APP_DIR, "assets", "icon.ico"))
+            self.win.iconbitmap(os.path.join(ASSET_DIR, "icon.ico"))
         except tk.TclError:
             pass
         self.win.resizable(False, False)

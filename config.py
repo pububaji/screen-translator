@@ -5,8 +5,15 @@ from __future__ import annotations
 import copy
 import json
 import os
+import sys
 
-APP_DIR = os.path.dirname(os.path.abspath(__file__))
+if getattr(sys, "frozen", False):
+    # 打包成 exe 后：配置和日志放在 exe 旁边，随包资源在 _MEIPASS 里
+    APP_DIR = os.path.dirname(os.path.abspath(sys.executable))
+else:
+    APP_DIR = os.path.dirname(os.path.abspath(__file__))
+
+ASSET_DIR = os.path.join(getattr(sys, "_MEIPASS", APP_DIR), "assets")
 CONFIG_PATH = os.path.join(APP_DIR, "config.json")
 
 DEFAULT_CONFIG = {
