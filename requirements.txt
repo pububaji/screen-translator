@@ -1,0 +1,7 @@
+mss
+pillow
+rapidocr-onnxruntime
+requests
+curl_cffi
+pystray
+keyboard
