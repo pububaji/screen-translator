@@ -153,6 +153,10 @@ python -m venv .venv
 ## 许可证
 
 本项目代码采用 [MIT License](LICENSE)。第三方组件的许可证与说明见
+
+##最新版：https://pububaji.gumroad.com/l/ppbyzc
+##最新版：https://pububaji.gumroad.com/l/rtraqx
+##最新版：
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 ## 免责声明
